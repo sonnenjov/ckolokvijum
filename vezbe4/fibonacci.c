@@ -12,7 +12,7 @@ int main()
       fn=fp +fpp;
       fpp=fp;
       fp=fn;
-      printf("%d:",fn);
+      printf(" %d ",fn);
     }
     return 0;
 } 

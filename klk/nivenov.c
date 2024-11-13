@@ -13,7 +13,7 @@ int main()
     broj/=10;
   }
   printf("SUMA: %d\n", suma);
-    if (i%suma==0)
+    if (broj%suma==0)
     {
       printf("Broj %d je Nivenov broj\n",i);
     } else {
