@@ -4,7 +4,7 @@
 #include <stdio.h>
 #define MAX 10
 
-void nalazenjeMax(int niz[MAX], int kolicina)
+int nalazenjeMax(int niz[MAX], int kolicina)
 {
   int i, max=0;
   for (i = 0; i < kolicina; i++)
@@ -14,7 +14,7 @@ void nalazenjeMax(int niz[MAX], int kolicina)
       max= niz[i];
     }
   }
- 
+ return max;
 }
 
 int unosenjeCifaraUListu(int niz[MAX], int broj)
@@ -32,7 +32,25 @@ int unosenjeCifaraUListu(int niz[MAX], int broj)
 
 
 
+void ispisivanjeCifara(int niz[MAX],int max, int a, int b, int c)
+{
+  if (max==a)
+  {
+    printf("%d%d%d\n", b,max,c);
+    printf("%d%d%d\n", c,max,b);
+  } else if (max==b)
+  {
 
+    printf("%d%d%d\n", a,max,b);
+    printf("%d%d%d\n", b,max,a);
+  }
+  else if (max==c)
+   {
+    printf("%d%d%d\n", a,max,b);
+    printf("%d%d%d\n", b,max,a);
+  }
+ 
+}
 int main()
 {
   int n,a,b,c,nizA[MAX];
@@ -40,7 +58,11 @@ int main()
   
   printf("Unesite trocifreni broj n: ");
   scanf("%d", &n);
+  a=n/100;
+  b=(n%100)/10;
+  c=(n%100)%10;
   int brojCifara = unosenjeCifaraUListu(nizA,n);
-  nalazenjeMax(nizA, brojCifara);
+  int max = nalazenjeMax(nizA, brojCifara);
+  ispisivanjeCifara(nizA,max,a,b,c);
   return 0;
 }
