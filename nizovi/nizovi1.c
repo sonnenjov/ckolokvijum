@@ -35,7 +35,7 @@ int ispis(int niz[], int n)
   printf("Elementi niza su: \n");
   for ( i = 0; i < n; i++)
   {
-    printf("%d", &niz[i]);
+    printf(" %d ", niz[i]);
   }
 };
 
@@ -46,6 +46,6 @@ int main()
   printf("Unesite broj elemenata u nizu: ");
   scanf("%d",&n);
   unos(niz,n);
-  ars(niz,n);  
+  ispis(niz,n);
   return 0;
 }

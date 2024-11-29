@@ -1,7 +1,9 @@
 #include <stdio.h>
 #define MAX 100
 // funkcija koja na;azi najveci element u nizu A duzine n
+
 //funkcija koja proverava da li se broj B nalazi u nizu A duzine n
+
 //funkcija koja proverava da li su svi elementu niza neparni
 
 void sortiranjeR(int A[], int n){
@@ -16,7 +18,6 @@ void sortiranjeR(int A[], int n){
         A[i]=A[j];
         A[j]=pom;
       }
-      
     }
     
   }
@@ -60,6 +61,18 @@ int nalazenje(int A[], int b, int n)
   return 0;
 }
 
+int ispis(int niz[], int n)
+{ 
+  int i;
+  printf("Elementi niza su: \n");
+  for ( i = 0; i < n; i++)
+  {
+    printf(" %d ", niz[i]);
+  }
+};
+
+
+
 
 int neparni(int A[], int n)
 {
@@ -76,27 +89,12 @@ int neparni(int A[], int n)
 }
 int main()
 {
+  
   int A[MAX], B[MAX], n;
    printf("Unesite duzine niza: ");
   scanf("%d", &n);
   unos(A,n);
-  int m = najveci(A,n);
-  printf("Najveci broj iz niza A je : %d\n", m);
-  if (nalazenje(A,n,5) == 1)
-  {
-    printf("Broj %d se nalazi u nizu A", 5);
-  }
-  else{
-    printf("Broj %d se ne nalazi u nizu A", 5);
-  }
-  
-  if (neparni(A, n)==1)
-  {
-    printf("Svi elementi u nizu A su neparni");
-  }
-  else {
-    printf("Svi elementi u nizu A nisu neparni");
-  }
-  
+  sortiranjeR(A,n);
+  ispis(A,n);
   return 0;
 }
